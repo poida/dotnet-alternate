@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>USE_ALTERNATES</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+    <ProjectReference Include="../thingy.alternate/thingy.alternate.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../thingy/thingy.csproj" />
+    <ProjectReference Include="../thingy.http/thingy.http.csproj" />
+  </ItemGroup>
+
+</Project>
